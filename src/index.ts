@@ -1,12 +1,12 @@
-import express, {Request, Response} from 'express'
-import cors from 'cors'
+import express, {Request, Response} from 'express';
+import cors from 'cors';
 import bodyParser from "body-parser";
 
-const app = express()
-app.use(cors())
-app.use(bodyParser.json())
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 
 let videos = [
     {id: 1, title: 'About JS - 01', author: 'it-incubator.eu'},
@@ -17,11 +17,11 @@ let videos = [
 ]
 
 app.get('/', (req: Request, res: Response) => {
-    res.send('Hello: World!!!')
+    res.send('Hello: World!!!');
 })
 
 app.get('/videos', (req: Request, res: Response) => {
-    res.send(videos)
+    res.send(videos);
 })
 
 app.get('/videos/:videoId', (req: Request, res: Response) => {
